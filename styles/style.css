@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 36px;
+  color: #060a24;
+  line-height: 42px;
+  font-weight: 400;
+}
+
+p {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  color: #060a24;
+  line-height: 22px;
+}
+.nav-menu {
+  height: 44px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.nav-menu img {
+  margin: 1rem;
+  width: 24px;
+  height: 24px;
+}
+.hamburger > div {
+  background-color: black;
+  width: 18px;
+  height: 2px;
+  transition: 0.4s all;
+
+  /*
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  */
+}
+.hamburger > div:before,
+.hamburger > div:after {
+  background-color: black;
+  width: 18px;
+  height: 2px;
+  transition: 0.4s;
+}
+
+.toggler {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+
+.hamburger {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  z-index: -1;
+}
+
+.hamburger > div:before {
+  top: -5px;
+}
+.hamburger > div:after {
+  top: 5px;
+}
+.hamburger > div:before,
+.hamburger > div:after {
+  content: "";
+  position: absolute;
+  transition: 0.4s;
+}
+.toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.toggler:checked + .hamburger > div:after,
+.toggler:checked + .hamburger > div:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.menu {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  height: 224px;
+  opacity: 0;
+  transition: 0.6s ease-in-out;
+  z-index: 2;
+}
+.menu ul {
+  background-color: #0000ec;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.menu li {
+  list-style: none;
+}
+.menu a {
+  color: #ffffff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  line-height: 28px;
+  text-decoration: none;
+  margin: 16px;
+  transition: 0.4s;
+}
+
+.menu a:hover {
+  color: #00f3bb;
+}
+.menu a:active {
+  color: rgba(6, 10, 36, 0.56);
+  text-decoration: line-through;
+}
+
+.toggler:checked ~ .menu {
+  opacity: 1;
+}
+
+
+.intro-content {
+  height: 42vh;
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.intro-heading h1 {
+  display: inline-block;
+}
+
+.world-line {
+  text-decoration: line-through;
+}
+.blue-dot {
+  display: block;
+}
+.blue-dot::after {
+  content: ".";
+}
+.intro-text {
+  width: auto;
+  height: 66px;
+  display: inline-block;
+}
+.intro-text::after {
+  content: "Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.";
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  color: #060a24;
+  line-height: 22px;
+}
+a .buttonGradient {
+  width: 90%;
+}
+.buttonGradient {
+  width: 100%;
+  height: 56px;
+  margin: 1rem;
+  background-color: #00f3bb;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-size: 16px;
+  color: #060a24;
+  text-align: center;
+  line-height: 24px;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: 4px 8px 15px rgba(6, 10, 36, 0.1);
+  transition: 0.4s;
+}
+
+.fondo-azul {
+  height: 1200px;
+  position: relative;
+  z-index: 1;
+}
+.fondo-azul::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #0000ff, #0000a3);
+  transform: skewY(-8deg);
+  z-index: -1;
+}
+
+.fondo-azul h2 {
+  color: #ffffff;
+  position: relative;
+  top: 40px;
+  left: 16px;
+  display: inline-block;
+}
+
+.podcast-content {
+  margin: 0.7rem;
+  transform: translateY(60px);
+}
+.podcast-episode iframe {
+  margin-bottom: 0.7rem;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 232px;
+}
+
+/*phone*/
+.phone-content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  transform: translateY(-60px);
+}
+
+.phone-image {
+  height: 520px;
+  width: auto;
+}
+.phone-text {
+  height: 40vh;
+  width: auto;
+  margin: 1rem;
+  position: relative;
+  text-align: left;
+}
+.phone-text p {
+  margin-top: 0.5rem;
+}
+
+
+.invitades-content {
+  width: 100%;
+  height: auto;
+}
+.invitades-content h2 {
+  margin: 0.4em;
+}
+
+.fotos-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*topicos*/
+
+.temas h2 {
+  width: 260px;
+  margin: 1em 0.5em;
+  display: inline-block;
+}
+.temas-content {
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+.tema-single {
+  margin: 3em;
+  text-align: center;
+}
+.tema-single h3 {
+  color: #060a24;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 32px;
+  margin: 1em;
+}
+
+
+.novedades-container {
+  height: 60vh;
+}
+.fondo-azul2 {
+  clip-path: polygon(0 19%, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(to bottom, #0000ff, #0000a3);
+  height: 60%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.novedades-text {
+  height: 50vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1rem;
+}
+
+.novedades-text h2 {
+  color: #ffffff;
+  text-align: center;
+  margin: 1rem;
+  width: 70%;
+  display: inline-block;
+}
+.novedades-text a {
+  width: 100%;
+  text-decoration: none;
+}
+.novedades-text .buttonGradient {
+  margin: 1rem auto;
+  display: block;
+}
+
+/*seccion footer*/
+.footerContent {
+  height: 15vh;
+}
+.footerContent p {
+  text-align: center;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.footerContent .nav-menu {
+  width: 70%;
+  margin: 0.5em auto;
+}
+.footerContent .nav-menu i {
+  color: #060a24;
+  font-size: 16px;
+  transition: 0.4s;
+}
+.footerContent .nav-menu i:hover {
+  color: #00f3bb;
+}
